@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var expressJwt = require('express-jwt');
 var config = require('config.json');
 
+app.use(express.static(__dirname + '/views'));
 app.set('view engine', 'ejs');
 app.set('views', __dirname + '/views');
 app.use(bodyParser.urlencoded({ extended: false }));
