@@ -3,10 +3,9 @@
 
     angular
         .module('app')
-        .factory('FlashService', FlashService);
+        .factory('FlashService', Service);
 
-    FlashService.$inject = ['$rootScope'];
-    function FlashService($rootScope) {
+    function Service($rootScope) {
         var service = {};
 
         service.Success = Success;
@@ -45,7 +44,7 @@
         function Error(message, keepAfterLocationChange) {
             $rootScope.flash = {
                 message: message,
-                type: 'error',
+                type: 'danger',
                 keepAfterLocationChange: keepAfterLocationChange
             };
         }
