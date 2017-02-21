@@ -1,0 +1,16 @@
+<div class="form-container">
+    <form method="post" class = "bs-example bs-example-form">
+        <div class="form-group input-group-lg">
+            <label for="moods">
+            	<h1>
+				{{vm.user.username}}, How Do you Feel? (Adjectives serparated by comma)
+				</h1>
+            </label>
+            <input type="text" id="moods" class="form-control" ng-model="vm.user.week2.moods" required />
+        </div>
+        
+        <div class="form-group">
+            <button class="btn btn-primary" ng-click="vm.saveUser()">Save</button>
+        </div>
+    </form>
+</div>

@@ -11,20 +11,20 @@
         $urlRouterProvider.otherwise("/");
 
         $stateProvider
-            .state('home', {
+            .state('profile', {
                 url: '/',
+                templateUrl: 'profile/index.html',
+                controller: 'Profile.IndexController',
+                controllerAs: 'vm',
+                data: { activeTab: 'profile' }
+            })
+            .state('home', {
+                url: '/home',
                 templateUrl: 'home/index.html',
                 controller: 'Home.IndexController',
                 controllerAs: 'vm',
                 data: { activeTab: 'home' }
-            })
-            .state('account', {
-                url: '/account',
-                templateUrl: 'account/index.html',
-                controller: 'Account.IndexController',
-                controllerAs: 'vm',
-                data: { activeTab: 'account' }
-            });
+            });            
     }
 
     function run($http, $rootScope, $window) {
