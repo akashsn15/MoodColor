@@ -8,6 +8,7 @@ router.post('/authenticate', authenticateUser);
 router.post('/register', registerUser);
 router.get('/current', getCurrentUser);
 router.put('/:_id', updateUser);
+router.put('/update/:_id', updateUserVal);
 router.delete('/:_id', deleteUser);
 
 module.exports = router;
@@ -60,6 +61,22 @@ function updateUser(req, res) {
     }
 
     userService.update(userId, req.body)
+        .then(function () {
+            res.sendStatus(200);
+        })
+        .catch(function (err) {
+            res.status(400).send(err);
+        });
+}
+
+function updateUserVal(req, res) {
+    var userId = req.user.sub;
+    if (req.params._id !== userId) {
+        // can only update own account
+        return res.status(401).send('You can only update your own account');
+    }
+
+    userService.updateUserValue(userId, req.body)
         .then(function () {
             res.sendStatus(200);
         })

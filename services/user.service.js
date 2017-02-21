@@ -13,6 +13,7 @@ service.authenticate = authenticate;
 service.getById = getById;
 service.create = create;
 service.update = update;
+service.updateUserValue = updateUserValue;
 service.delete = _delete;
 
 module.exports = service;
@@ -119,8 +120,8 @@ function update(_id, userParam) {
         // fields to update
         var set = {
             username: userParam.username,
-            week1: userParam.week1,
-            week2: userParam.week2
+            //week1: [{userParam.week1}],
+            week2: {"moods" : [userParam.week2.moods]}
         };
 
         // update password if it was entered
@@ -131,6 +132,37 @@ function update(_id, userParam) {
         db.users.update(
             { _id: mongo.helper.toObjectID(_id) },
             { $set: set },
+            function (err, doc) {
+                if (err) deferred.reject(err.name + ': ' + err.message);
+
+                deferred.resolve();
+            });
+    }
+
+    return deferred.promise;
+}
+
+function updateUserValue(_id, userParam) {
+    var deferred = Q.defer();
+
+    // validation
+    db.users.findById(_id, function (err, user) {
+        if (err) deferred.reject(err.name + ': ' + err.message);
+        updateValue();
+    });
+
+    function updateValue() {
+        // fields to update
+        var push = {
+            // week1: userParam.week1,
+            week2:{
+                moods: [userParam.week2.moods]
+            }
+        };
+
+        db.users.update(
+            { _id: mongo.helper.toObjectID(_id) },
+            { $push: push },
             function (err, doc) {
                 if (err) deferred.reject(err.name + ': ' + err.message);
 

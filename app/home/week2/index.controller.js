@@ -9,7 +9,7 @@
         var vm = this;
 
         vm.user = null;
-        vm.saveUser = saveUser;
+        vm.saveUserValue = saveUserValue;
 
         initController();
 
@@ -20,8 +20,8 @@
             });
         }
 
-        function saveUser() {
-            UserService.Update(vm.user)
+        function saveUserValue() {
+            UserService.UpdateValue(vm.user)
                 .then(function () {
                     FlashService.Success('User Value updated');
                 })

@@ -14,6 +14,7 @@
         service.GetByUsername = GetByUsername;
         service.Create = Create;
         service.Update = Update;
+        service.UpdateValue = UpdateValue;
         service.Delete = Delete;
 
         return service;
@@ -41,6 +42,11 @@
         function Update(user) {
             return $http.put('/api/users/' + user._id, user).then(handleSuccess, handleError);
         }
+
+        function UpdateValue(user) {
+            return $http.put('/api/users/update/' + user._id, user).then(handleSuccess, handleError);
+        }
+
 
         function Delete(_id) {
             return $http.delete('/api/users/' + _id).then(handleSuccess, handleError);
