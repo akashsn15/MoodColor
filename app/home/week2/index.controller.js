@@ -9,9 +9,10 @@
         var vm = this;
 
         vm.user = null;
+        initController();
+        
         vm.saveUserValue = saveUserValue;
 
-        initController();
 
         function initController() {
             // get current user
@@ -21,6 +22,7 @@
         }
 
         function saveUserValue() {
+            console.log(vm.user);
             UserService.UpdateValue(vm.user)
                 .then(function () {
                     FlashService.Success('User Value updated');
