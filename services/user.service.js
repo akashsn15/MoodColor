@@ -121,7 +121,7 @@ function update(_id, userParam) {
         var set = {
             username: userParam.username,
             //week1: [{userParam.week1}],
-            week2: {moods : [userParam.week2.moods]}
+            //week2: {moods : [userParam.week2.moods]}
         };
 
         // update password if it was entered
@@ -156,7 +156,7 @@ function updateUserValue(_id, userParam) {
         var push = {
             // week1: userParam.week1,
             week2:{
-                moods: [userParam.week2.moods]
+                moods: [userParam.moods]
             }
         };
 
