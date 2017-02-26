@@ -1,5 +1,5 @@
 <div class="form-container">
-    <form method="post" class = "bs-example bs-example-form">
+    <form name= "myForm" method="post" class = "bs-example bs-example-form">
         <div class="form-group input-group-lg">
             <label for="moods">
             	<h1>
@@ -7,12 +7,10 @@
 				</h1>
             </label>
             <input type="text" id="moods" class="form-control" ng-model="vm.user.moods" required />
-        </div>
-        
-        <div class="form-group">
-        <a ui-sref="next">
-            <button class="btn btn-primary btnNext" ng-click="vm.updt()">Next</button>
-        </a>
+            <br>
+            <a ui-sref="next">
+                <button class="btn btn-primary btnNext" ng-click="vm.updt()" ng-disabled="myForm.$invalid">Next</button>
+            </a>
         </div>
     </form>
 </div>
