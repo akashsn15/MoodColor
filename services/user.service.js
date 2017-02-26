@@ -156,7 +156,8 @@ function updateUserValue(_id, userParam) {
         var push = {
             // week1: userParam.week1,
             week2:{
-                moods: [userParam.moods]
+                mood : [userParam.moods],
+                color : [userParam.color]
             }
         };
 

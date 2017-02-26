@@ -32,6 +32,7 @@
         $http.defaults.headers.common['Authorization'] = 'Bearer ' + $window.jwtToken;
 
         // update active tab on state change
+        if($rootScope.activeTab != null)
         $rootScope.$on('$stateChangeSuccess', function (event, toState, toParams, fromState, fromParams) {
             $rootScope.activeTab = toState.data.activeTab;
         });

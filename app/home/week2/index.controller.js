@@ -1,8 +1,10 @@
+var moods;
 (function () {
     'use strict';
 
     angular
         .module('app')
+        .config(config)
         .controller('Week2.IndexController', Controller);
 
     function Controller($window, UserService, FlashService) {
@@ -11,7 +13,7 @@
         vm.user = null;
         initController();
         
-        vm.saveUserValue = saveUserValue;
+        vm.updt = updt;
 
 
         function initController() {
@@ -21,16 +23,22 @@
             });
         }
 
-        function saveUserValue() {
-            console.log(vm.user);
-            UserService.UpdateValue(vm.user)
-                .then(function () {
-                    FlashService.Success('User Value updated');
-                })
-                .catch(function (error) {
-                    FlashService.Error(error);
-                });
+        function updt() {
+            moods = vm.user.moods;
         }
+    }
+
+    function config($stateProvider, $urlRouterProvider) {
+    //route
+        $urlRouterProvider.otherwise("/");
+
+        $stateProvider
+            .state('next', {
+                url: '/home/',
+                templateUrl: 'home/color.html',
+                controller: 'Home.ColorController',
+                controllerAs: 'vm',
+            });
     }
 
 })();
