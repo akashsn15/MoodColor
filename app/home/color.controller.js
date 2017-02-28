@@ -24,7 +24,10 @@
 
         function saveUserValue() {
         	if(moods)
+            {
                 vm.user.moods = moods;
+                moods = null;
+            }
             else
                 vm.user.points = points;
             

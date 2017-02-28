@@ -161,7 +161,7 @@ function updateUserValue(_id, userParam) {
                 }
             };
             //resetting
-            userParam.moods = null;
+            userParam.moods = null;  
         }
         else
         {
