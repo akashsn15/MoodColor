@@ -153,13 +153,23 @@ function updateUserValue(_id, userParam) {
 
     function updateValue() {
         // fields to update
-        var push = {
-            // week1: userParam.week1,
-            week2:{
-                mood : [userParam.moods],
-                color : [userParam.color]
-            }
-        };
+        if(userParam.moods != null){
+            var push = {
+                week2:{
+                    mood : [userParam.moods],
+                    color : [userParam.color]
+                }
+            };
+        }
+        else
+        {
+            var push = {
+                week1:{
+                    points : userParam.points,
+                    color : [userParam.color]
+                }
+            };
+        }
 
         db.users.update(
             { _id: mongo.helper.toObjectID(_id) },

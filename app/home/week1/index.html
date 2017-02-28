@@ -1,6 +1,11 @@
-<div class="container-fluid">
 <h2>Hi {{vm.user.username}}!</h2>
-<div id="container" style="min-width: 310px; height: 400px; max-width: 700px; margin: 0 auto">
-    <script src="/app/home/chart.js"></script>
-</div>
-</div>
+
+<link href="/app/home/week1/chart.css" rel="stylesheet">
+
+<div id="canvas" class="container-fluid"></div>
+
+<script src="/app/home/week1/chart.js"></script>
+
+<a ui-sref="nextWeek1">
+   	<button class="btn btn-primary btnNext">Next</button>
+</a>

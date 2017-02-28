@@ -3,6 +3,7 @@
 
     angular
         .module('app')
+        .config(config)
         .controller('Week1.IndexController', Controller);
 
     function Controller(UserService) {
@@ -18,5 +19,18 @@
                 vm.user = user;
             });
         }
+    }
+
+    function config($stateProvider, $urlRouterProvider) {
+    //route
+        $urlRouterProvider.otherwise("/");
+
+        $stateProvider
+            .state('nextWeek1', {
+                url: '/home/',
+                templateUrl: 'home/color.html',
+                controller: 'Home.ColorController',
+                controllerAs: 'vm',
+            });
     }
 })();

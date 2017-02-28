@@ -23,7 +23,11 @@
         }
 
         function saveUserValue() {
-        	vm.user.moods = moods;
+        	if(moods)
+                vm.user.moods = moods;
+            else
+                vm.user.points = points;
+            
             vm.user.color = data.label;
             UserService.UpdateValue(vm.user)
                 .then(function () {

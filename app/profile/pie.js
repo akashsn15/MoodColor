@@ -5,8 +5,6 @@
         .injector(['app'])
         .invoke(function (UserService) {
             UserService.GetCurrent().then(function (user) {
-                console.log(user);
-
                 var redCount, yellowCount, greenCount, blueCount, whiteCount, blackCount, greyCount;
                 var redMood, yellowMood, greenMood, blueMood, whiteMood, blackMood, greyMood;
                 redCount = 0; redMood = "";
@@ -60,10 +58,7 @@
                             greyMood += mod + ", ";
                         }
                     }
-                    console.log(redMood);
-                }
-
-                var pie2 = new d3pie("pieChart", {
+                    var pie2 = new d3pie("pieChart", {
                         "header": {
                             "title": {
                                 "text": "Week 2 Mood Trends",
@@ -184,7 +179,7 @@
                         "callbacks": {
                         }
                     });
-
+                }
             });            
         });
 })();
