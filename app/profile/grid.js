@@ -160,10 +160,11 @@ angular
             }
             // drawCircle(pointx, pointy, fill);
             svg.append("circle")
+                .attr("class", "circle")
                 .style("fill", fill)
                 .attr("cx", user.week1[i].points[0])
                 .attr("cy", user.week1[i].points[1])
-                .attr("r", 4);
+                .attr("r", 7);
         }
     }
 

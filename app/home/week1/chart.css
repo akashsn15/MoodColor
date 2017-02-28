@@ -17,3 +17,7 @@
   .tick line{
     opacity: 0.05;
   }
+
+  .circle{
+    opacity: 0.8 ;
+  }

@@ -126,7 +126,7 @@ svg.append('circle')
     .style("fill", "black")
     .attr('cx', coords[0])
     .attr('cy', coords[1])
-    .attr('r', 4);
+    .attr('r', 7);
 
 });
 })();
