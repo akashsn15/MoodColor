@@ -160,6 +160,8 @@ function updateUserValue(_id, userParam) {
                     color : [userParam.color]
                 }
             };
+            //resetting
+            userParam.moods = null;
         }
         else
         {
