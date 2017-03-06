@@ -11,24 +11,49 @@
     
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand">MoodColor</a>
-            </div>
-        </div>
-    </nav>
+        <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" ui-sref="profile">MoodColor</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav"">
+            <li ng-class="{active: activeTab === 'profile'}">
+                <a ui-sref="profile"><span class="icon-bar">Profile </a>
+            </li>
+        
+            <li class="dropdown show" ng-class="{active: activeTab === 'home'}">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Record Mood! <span class="caret"></span></a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <li> <a class="dropdown-item" ui-sref="week1">Week1</a> </li>
+                <li> <a class="dropdown-item" ui-sref="week2">Week2</a> </li>
+            </ul>
+            </li>
+        </ul>
+    <a href="/login" target="_self">
+        <button type="button" class="btn btn-danger navbar-right navbar-btn">Logout <span class="glyphicon glyphicon-off"></span></button>
+    </a>
+
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
+
+
+
 </head>
 
 <body class="full container">
-
-    
-
     <header>
-    <ul class="nav nav-tabs">
-        <li ng-class="{active: activeTab === 'profile'}"><a ui-sref="profile">Profile</a></li>
-        <li ng-class="{active: activeTab === 'home'}"><a ui-sref="home">Home</a></li>
-        <li><a href="/login" target="_self">Logout</a></li>
-    </ul>
-
+    
     <div class="flash-message" ng-if="flash">
         <div class="{{'alert alert-' + flash.type}}" ng-bind="flash.message"></div>
     </div>

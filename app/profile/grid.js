@@ -167,6 +167,9 @@ angular
                 .attr("r", 7);
         }
     }
+    else{
+        document.getElementById("canvas").innerHTML = "No Data Entered Yet";
+    }
 
     });            
     });

@@ -180,6 +180,9 @@
                         }
                     });
                 }
+                else{
+                document.getElementById("pieChart").innerHTML = "No Data Entered Yet";
+                };
             });            
         });
 })();
