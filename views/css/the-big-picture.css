@@ -4,9 +4,10 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
 
-body {
-	margin-bottom: 50px;
-	background: none;
+body, html {
+	height: 100%;
+	/*margin-bottom: 50px;*/
+	/*background: none;*/
 }
 
 .full {
