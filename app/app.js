@@ -18,6 +18,18 @@
                 controllerAs: 'vm',
                 data: { activeTab: 'profile' }
             })
+            .state('week1', {
+                url: '/home/week1',
+                templateUrl: 'home/week1/index.html',
+                controller: 'Week1.IndexController',
+                controllerAs: 'vm',
+            })
+            .state('week2', {
+                url: '/home/week2',
+                templateUrl: 'home/week2/index.html',
+                controller: 'Week2.IndexController',
+                controllerAs: 'vm',
+            })
             .state('home', {
                 url: '/home',
                 templateUrl: 'home/index.html',
