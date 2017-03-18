@@ -67,7 +67,7 @@
                                 "font": "open sans"
                             },
                             "subtitle": {
-                                "text": "Hover to get the words associated with the color segemnts",
+                                "text": "Hover to get the words associated with the color segments",
                                 "color": "#999999",
                                 "fontSize": 12,
                                 "font": "open sans"
